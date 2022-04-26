@@ -1,4 +1,4 @@
-name: jupyter-resource-usage
+name: jupyter-system-usage
 channels:
 - conda-forge
 dependencies:

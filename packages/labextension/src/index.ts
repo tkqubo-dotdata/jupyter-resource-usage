@@ -13,7 +13,7 @@ import { MemoryUsage } from './memoryUsage';
  * Initialization data for the jupyter-resource-usage extension.
  */
 const extension: JupyterFrontEndPlugin<void> = {
-  id: '@jupyter-server/resource-usage:memory-status-item',
+  id: '@jupyter-server/system-usage:memory-status-item',
   autoStart: true,
   requires: [IStatusBar, ITranslator],
   activate: (

@@ -21,26 +21,19 @@ class ApiHandler(APIHandler):
         """
         Calculate and return current resource usage metrics
         """
-        config = self.settings["jupyter_resource_usage_display_config"]
+        config = self.settings["jupyter_system_usage_display_config"]
 
+        virtual_memory = psutil.virtual_memory()
         cur_process = psutil.Process()
         all_processes = [cur_process] + cur_process.children(recursive=True)
 
         # Get memory information
-        rss = 0
-        for p in all_processes:
-            try:
-                rss += p.memory_info().rss
-            except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
-                pass
+        rss = virtual_memory.used
 
-        if callable(config.mem_limit):
-            mem_limit = config.mem_limit(rss=rss)
-        else:  # mem_limit is an Int
-            mem_limit = config.mem_limit
+        mem_limit = virtual_memory.total
 
         limits = {"memory": {"rss": mem_limit}}
-        if config.mem_limit and config.mem_warning_threshold != 0:
+        if mem_limit and config.mem_warning_threshold != 0:
             limits["memory"]["warn"] = (mem_limit - rss) < (
                 mem_limit * config.mem_warning_threshold
             )

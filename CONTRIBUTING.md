@@ -52,13 +52,13 @@ pip install --editable .[dev]
 Enable the server extension:
 
 ```bash
-jupyter serverextension enable --py jupyter_resource_usage  --sys-prefix
+jupyter serverextension enable --py jupyter_system_usage  --sys-prefix
 ```
 
 _Note: if you're using Jupyter Server:_
 
 ```bash
-jupyter server extension enable --py jupyter_resource_usage  --sys-prefix
+jupyter server extension enable --py jupyter_system_usage  --sys-prefix
 ```
 
 ## Classic notebook extension
@@ -66,8 +66,8 @@ jupyter server extension enable --py jupyter_resource_usage  --sys-prefix
 Install and enable the nbextension for use with Jupyter Classic Notebook.
 
 ```bash
-jupyter nbextension install --py jupyter_resource_usage --symlink --sys-prefix
-jupyter nbextension enable --py jupyter_resource_usage --sys-prefix
+jupyter nbextension install --py jupyter_system_usage --symlink --sys-prefix
+jupyter nbextension enable --py jupyter_system_usage --sys-prefix
 ```
 
 Start a Jupyter Notebook instance, open a new notebook and check out the memory usage in the top right!
@@ -159,5 +159,5 @@ It's a good idea to write tests to exercise any new features,
 or that trigger any bugs that you have fixed to catch regressions. `pytest` is used to run the test suite. You can run the tests with in the repo directory:
 
 ```bash
-python -m pytest -vvv jupyter_resource_usage
+python -m pytest -vvv jupyter_system_usage
 ```

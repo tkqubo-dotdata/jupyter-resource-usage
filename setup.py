@@ -6,10 +6,10 @@ import setuptools
 HERE = Path(__file__).parent.resolve()
 
 # The name of the project
-NAME = "jupyter-resource-usage"
+NAME = "jupyter-system-usage"
 PACKAGE_NAME = NAME.replace("-", "_")
-LABEXT_NAME = "@jupyter-server/resource-usage"
-NBEXT_NAME = "jupyter_resource_usage"
+LABEXT_NAME = "@jupyter-server/system-usage"
+NBEXT_NAME = "jupyter_system_usage"
 
 
 lab_path = HERE / PACKAGE_NAME / "labextension"
@@ -26,17 +26,17 @@ data_files_spec = [
     (
         "etc/jupyter/jupyter_server_config.d",
         "jupyter-config/jupyter_server_config.d",
-        "jupyter_resource_usage.json",
+        "jupyter_system_usage.json",
     ),
     (
         "etc/jupyter/jupyter_notebook_config.d",
         "jupyter-config/jupyter_notebook_config.d",
-        "jupyter_resource_usage.json",
+        "jupyter_system_usage.json",
     ),
     (
         "etc/jupyter/nbconfig/notebook.d",
         "jupyter-config/nbconfig/notebook.d",
-        "jupyter_resource_usage.json",
+        "jupyter_system_usage.json",
     ),
 ]
 

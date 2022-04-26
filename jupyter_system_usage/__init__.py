@@ -18,7 +18,7 @@ def _jupyter_server_extension_points():
     """
     Set up the server extension for collecting metrics
     """
-    return [{"module": "jupyter_resource_usage"}]
+    return [{"module": "jupyter_system_usage"}]
 
 
 def _jupyter_nbextension_paths():
@@ -28,9 +28,9 @@ def _jupyter_nbextension_paths():
     return [
         {
             "section": "notebook",
-            "dest": "jupyter_resource_usage",
+            "dest": "jupyter_system_usage",
             "src": "static",
-            "require": "jupyter_resource_usage/main",
+            "require": "jupyter_system_usage/main",
         }
     ]
 

@@ -9,7 +9,7 @@ from jupyter_server.serverapp import ServerApp
 class PSUtilMetricsLoader:
     def __init__(self, server_app: ServerApp):
         self.config = server_app.web_app.settings[
-            "jupyter_resource_usage_display_config"
+            "jupyter_system_usage_display_config"
         ]
         self.server_app = server_app
 
